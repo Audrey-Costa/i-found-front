@@ -131,7 +131,7 @@ const RegisterButton = styled.button`
   border: none;
   font-size: 20.976px;
   color: white;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Jost', sans-serif;
   :hover {
     cursor: pointer;
   }
@@ -160,7 +160,7 @@ const InputClass = styled.input`
   height: 58px;
   background: #ffffff;
   border: 1px solid #d4d4d4;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Jost', sans-serif;
   border-radius: 5px;
   padding-left: 10px;
 
