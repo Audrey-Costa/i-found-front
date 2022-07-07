@@ -7,7 +7,7 @@ import InputLogin from './InputLogin';
 
 export default function Login_Page() {
   return (
-    <Main margin_top={'35'}>
+    <Main margin_top={'1000'}>
       <Logo src={logo} alt="Logotipo if(ound)" />
       <InputLogin />
       <Link to="/sign-up">
