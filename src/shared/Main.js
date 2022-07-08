@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export default function Main({ children, margin_top }) {
-  return <Main_Style margin_top={margin_top}>{children}</Main_Style>;
+  return <MainStyle margin_top={margin_top}>{children}</MainStyle>;
 }
-const Main_Style = styled.main`
+const MainStyle = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;

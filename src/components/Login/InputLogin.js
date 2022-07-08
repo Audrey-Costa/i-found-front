@@ -5,6 +5,7 @@ import axios from 'axios';
 //import react
 
 import Loading from '../../shared/Loading';
+import ButtonSubmit from '../../shared/ButtonSubmit';
 //import components
 
 export default function InputLogin() {
@@ -67,7 +68,7 @@ export default function InputLogin() {
           onChange={e => setInputPassword(e.target.value)}
           required
         />
-        <RegisterButton
+        <ButtonSubmit
           backgroundcolor={
             stateButton === 'err'
               ? '#d4d4d4'
@@ -84,25 +85,11 @@ export default function InputLogin() {
           ) : (
             'Cadastrar'
           )}
-        </RegisterButton>
+        </ButtonSubmit>
       </form>
     </ContainerFormClass>
   );
 }
-
-const RegisterButton = styled.button`
-  width: 303px;
-  height: 45px;
-  background: ${props => props.backgroundcolor};
-  border-radius: 4.63636px;
-  border: none;
-  font-size: 20.976px;
-  color: white;
-  font-family: 'Jost', sans-serif;
-  :hover {
-    cursor: pointer;
-  }
-`;
 
 const ContainerFormClass = styled.div`
   display: flex;

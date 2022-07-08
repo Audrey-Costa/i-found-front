@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export default function Header({ children }) {
-  return <Header_Style>{children}</Header_Style>;
+  return <HeaderStyle>{children}</HeaderStyle>;
 }
 
-const Header_Style = styled.header`
+const HeaderStyle = styled.header`
   height: 78px;
   width: 100%;
 
