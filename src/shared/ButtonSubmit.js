@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
-export default function ButtonSubmit({ backgroundcolor, children }) {
+export default function ButtonSubmit({ backgroundcolor, children, width }) {
   return (
-    <ButtonSubmitStyle backgroundcolor={backgroundcolor} type="submit">
+    <ButtonSubmitStyle backgroundcolor={backgroundcolor} width={width} type="submit">
       {children}
     </ButtonSubmitStyle>
   );
 }
 
 const ButtonSubmitStyle = styled.button`
-  width: 303px;
+  width: ${props => props.width};
   height: 45px;
   background: ${props => props.backgroundcolor};
   border-radius: 4.63636px;

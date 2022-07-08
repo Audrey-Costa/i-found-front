@@ -2,18 +2,22 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import { useContext } from 'react';
 //import react
 
 import Loading from '../../shared/Loading';
 import ButtonSubmit from '../../shared/ButtonSubmit';
 //import components
 
+import UserContext from '../../contexts/UserContext';
+
 export default function InputLogin() {
+  const { setObjLoginResponse } = useContext(UserContext);
+
   const navigate = useNavigate();
 
   const [inputEmail, setInputEmail] = useState('');
   const [inputPassword, setInputPassword] = useState('');
-
   const [objNewLogin, setObjNewLogin] = useState({
     email: '',
     password: ''
@@ -37,7 +41,8 @@ export default function InputLogin() {
     const promise = axios.post(URL, objNewLogin);
 
     promise.then(() => {
-      navigate('../', { replace: true });
+      setObjLoginResponse(promise.data);
+      navigate('../home', { replace: true });
     });
     promise.catch(err => {
       console.log('esse é o erro:', err);
@@ -69,6 +74,7 @@ export default function InputLogin() {
           required
         />
         <ButtonSubmit
+          width={'303px'}
           backgroundcolor={
             stateButton === 'err'
               ? '#d4d4d4'

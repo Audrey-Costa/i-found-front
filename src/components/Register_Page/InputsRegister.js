@@ -97,6 +97,7 @@ export default function InputsRegister() {
           required
         />
         <ButtonSubmit
+          width={'303px'}
           backgroundcolor={
             stateButton === 'err'
               ? '#d4d4d4'
