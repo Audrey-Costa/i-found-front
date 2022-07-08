@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export default function ButtonOnlyWords({ children }) {
-  return <ButtonOnlyWords_Style>{children}</ButtonOnlyWords_Style>;
+  return <ButtonOnlyWordsStyle>{children}</ButtonOnlyWordsStyle>;
 }
 
-const ButtonOnlyWords_Style = styled.button`
+const ButtonOnlyWordsStyle = styled.button`
   background-color: transparent;
   border: none;
   color: #5f5a6f;

@@ -3,19 +3,33 @@ import '../../css/styles.css';
 //import css
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+//import react
 
-import Register_Page from '../Register_Page/Register_Page';
+import UserContext from '../../contexts/UserContext';
+//import contexts
+
+import RegisterPage from '../Register_Page/RegisterPage';
 import LoginPage from '../Login/LoginPage';
-import Home_Page from '../Home_Page/Home_Page';
+import HomePage from '../Home_Page/HomePage';
+import ProductAddPage from '../Products/Product_Add/ProductAddPage';
+import ProductRegisteredPage from '../Products/Product_Add/ProductRegisteredPage';
 
 export default function App() {
+  const [objLoginResponse, setObjLoginResponse] = useState({});
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home_Page />} />
-        <Route path="/home" element={<LoginPage />} />
-        <Route path="/sign-up" element={<Register_Page />} />
-      </Routes>
-    </BrowserRouter>
+    <UserContext.Provider value={{ objLoginResponse, setObjLoginResponse }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/add-product" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/sign-up" element={<RegisterPage />} />
+          <Route path="/" element={<ProductAddPage />} />
+
+          <Route path="/sucessProductRegister" element={<ProductRegisteredPage />} />
+        </Routes>
+      </BrowserRouter>
+    </UserContext.Provider>
   );
 }
