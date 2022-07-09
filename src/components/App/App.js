@@ -4,15 +4,17 @@ import '../../css/styles.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Register_Page from '../Register_Page/Register_Page';
-import LoginPage from '../Login/LoginPage';
+import RegisterPage from '../RegisterPage/RegisterPage';
+import LoginPage from '../LoginPage/LoginPage';
+import HomePage from '../HomePage/HomePage';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginPage/>}/>
-        <Route path="/sign-up" element={<Register_Page />} />
+        <Route path="/sign-in" element={<LoginPage/>}/>
+        <Route path="/sign-up" element={<RegisterPage/>}/>
+        <Route path='/' element={<HomePage/>}/>
       </Routes>
     </BrowserRouter>
   );
