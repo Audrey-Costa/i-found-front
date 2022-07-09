@@ -8,8 +8,8 @@ import { useNavigate } from 'react-router-dom';
 
 import UserContext from '../../../contexts/UserContext';
 
-import ButtonSubmit from '../../../shared/ButtonSubmit';
-import Loading from '../../../shared/Loading';
+import ButtonSubmit from '../../shared/ButtonSubmit';
+import Loading from '../../shared/Loading';
 
 export default function InputRegisterProduct() {
   const navigate = useNavigate();

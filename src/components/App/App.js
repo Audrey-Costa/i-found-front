@@ -9,11 +9,11 @@ import { useState } from 'react';
 import UserContext from '../../contexts/UserContext';
 //import contexts
 
-import RegisterPage from '../Register_Page/RegisterPage';
-import LoginPage from '../Login/LoginPage';
-import HomePage from '../Home_Page/HomePage';
 import ProductAddPage from '../Products/Product_Add/ProductAddPage';
 import ProductRegisteredPage from '../Products/Product_Add/ProductRegisteredPage';
+import RegisterPage from '../RegisterPage/RegisterPage';
+import LoginPage from '../LoginPage/LoginPage';
+import HomePage from '../HomePage/HomePage';
 
 export default function App() {
   const [objLoginResponse, setObjLoginResponse] = useState({});
@@ -22,11 +22,10 @@ export default function App() {
     <UserContext.Provider value={{ objLoginResponse, setObjLoginResponse }}>
       <BrowserRouter>
         <Routes>
-          <Route path="/add-product" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<RegisterPage />} />
-          <Route path="/" element={<ProductAddPage />} />
-
+          <Route path="/add-product" element={<ProductAddPage />} />
           <Route path="/sucessProductRegister" element={<ProductRegisteredPage />} />
         </Routes>
       </BrowserRouter>

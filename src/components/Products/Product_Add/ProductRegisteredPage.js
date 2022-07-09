@@ -1,5 +1,5 @@
-import TitlePage from '../../../shared/TitlePage';
-import H1 from '../../../shared/H1';
+import TitlePage from '../../shared/TitlePage';
+import H1 from '../../shared/H1';
 export default function ProductRegisteredPage() {
   return (
     <TitlePage>
