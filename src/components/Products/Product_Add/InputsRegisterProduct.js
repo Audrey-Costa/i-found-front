@@ -19,7 +19,7 @@ export default function InputRegisterProduct() {
   const [inputAmountroduct, setInputAmountroduct] = useState('');
   const [inpuPriceProduct, setInpuPriceProduct] = useState('');
   const [inputDiscountProduct, setInputDiscountProduct] = useState('');
-  const [selectCategory, setSelectCategory] = useState(1);
+  const [selectCategory, setSelectCategory] = useState('hardware');
   const [objNewProduct, setObjNewProduct] = useState({
     category: '',
     name: '',
@@ -43,7 +43,6 @@ export default function InputRegisterProduct() {
     if (inputCategory) objNewProduct.category = inputCategory;
 
     // ===
-
     objNewProduct.name = inputNameProduct;
     objNewProduct.amount = inputAmountroduct;
     objNewProduct.price = inpuPriceProduct;
@@ -73,7 +72,6 @@ export default function InputRegisterProduct() {
               value={selectCategory}
               onChange={e => setSelectCategory(e.target.value)}
               name="categories"
-              id="categories"
             >
               <option value="hardware">Hardware</option>
               <option value="software">Software</option>
@@ -113,16 +111,19 @@ export default function InputRegisterProduct() {
 
         <section className="sectionPrice">
           <InputClass
-            placeholder="Valor do produto"
+            placeholder="Valor"
             type="number"
+            min={0}
             value={inpuPriceProduct}
             onChange={e => setInpuPriceProduct(e.target.value)}
             required
           />
 
           <InputClass
-            placeholder="Desconto"
+            placeholder="Desconto (0-100%)"
             type="number"
+            min={0}
+            max={100}
             value={inputDiscountProduct}
             onChange={e => setInputDiscountProduct(e.target.value)}
             required
@@ -238,6 +239,7 @@ const ContainerFormStyle = styled.div`
 
     input:first-child {
       margin-right: 10px;
+      max-width: 140px;
     }
   }
 `;
