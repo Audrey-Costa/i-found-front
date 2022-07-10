@@ -14,6 +14,7 @@ import LoginPage from '../Login/LoginPage';
 import HomePage from '../Home_Page/HomePage';
 import ProductAddPage from '../Products/Product_Add/ProductAddPage';
 import ProductRegisteredPage from '../Products/Product_Add/ProductRegisteredPage';
+import ProductViewPage from '../Products/Product_View_Page/ProductViewPage';
 
 export default function App() {
   const [objLoginResponse, setObjLoginResponse] = useState({});
@@ -25,7 +26,8 @@ export default function App() {
           <Route path="/add-product" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<RegisterPage />} />
-          <Route path="/" element={<ProductAddPage />} />
+          <Route path="/" element={<ProductViewPage />} />
+          <Route path="/add-product" element={<ProductAddPage />} />
 
           <Route path="/sucessProductRegister" element={<ProductRegisteredPage />} />
         </Routes>

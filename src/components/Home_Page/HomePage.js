@@ -1,6 +1,6 @@
 import Header from '../../shared/Header';
 import Main from '../../shared/Main';
-import Footer from '../../shared/Footer';
+
 export default function Home_Page() {
   return (
     <>
