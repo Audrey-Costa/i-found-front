@@ -19,10 +19,14 @@ export default function HomePage(){
                     <span>
                         <div>
                             <BiUserCircle/>
-                            <p>Faça <Link to="/sign-in" style={{textDecoration: "none", color: "black", fontWeight: "bold"}}>login</Link> ou crie seu <Link to="/sign-up" style={{textDecoration: "none", color: "black", fontWeight: "bold"}}>cadastro</Link> </p>
+                            <p>Faça <Link to="/login" style={{textDecoration: "none", color: "black", fontWeight: "bold"}}>login</Link> ou crie seu <Link to="/sign-up" style={{textDecoration: "none", color: "black", fontWeight: "bold"}}>cadastro</Link> </p>
                         </div>
-                        <BiCart/>
-                        <BiHeart/>
+                        <Link to="/" style={{textDecoration: "none", color: "black"}}>
+                            <BiCart/>
+                        </Link>
+                        <Link to="/" style={{textDecoration: "none", color: "black"}}>
+                            <BiHeart/>
+                        </Link>
                     </span>
                 </div>
                 <div>
@@ -47,16 +51,21 @@ export default function HomePage(){
             <BestSellers>
 
             </BestSellers>
+            <BestSellers>
+
+            </BestSellers>
+            <BestSellers>
+
+            </BestSellers>
         </Content>
     )
 }
 
 const Content = styled.div`
-    width: 98vw;
-    height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     background: url(${background}) no-repeat center;
     background-size: cover;
@@ -72,16 +81,16 @@ const Content = styled.div`
     header > :first-child{
         background-color: rgba(255, 255,  255, 0.9);
         width: 100%;
-        height: 10vh;
+        height: 50px;
         display:flex;
         justify-content:space-between;
         align-items: center;
     }
 
     header > :first-child > input{
-        width: 30rem;
+        width: 300px;
         height: 5vh;
-        font-size: 1.2rem;
+        font-size: 16px;
     }
 
     header > :first-child > span{
@@ -89,11 +98,11 @@ const Content = styled.div`
         display: flex;
         justify-content: space-around;
         align-items: center;
-        font-size: 2.8rem;
+        font-size: 24px;
     }
 
     header > :first-child > span > div{
-        font-size: 1.6rem;
+        font-size: 16px;
         width: 50%;
         display: flex;
         justify-content: center;
@@ -101,12 +110,12 @@ const Content = styled.div`
     }
 
     header > :first-child > span > div > :first-child{
-        font-size: 8rem;
+        font-size: 69px;
         margin: 0 10px;
     }
 
     header img{
-        width: 10vh;
+        width: 50px;
         margin: 0 20px;
     }
 
@@ -133,9 +142,33 @@ const Content = styled.div`
         justify-content: center;
         align-items: center;
         color: white;
-        font-size: 1.2rem;
+        font-size: 18px;
+        text-align: center;
         font-weight: 600;
     }
 
-    
+    @media(max-width: 800px){
+        header > :first-child > input{
+            width: 100px;
+            height: 30px;
+            font-size: 8px;
+        }
+        header > :first-child > span{
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 14px;
+        }
+        header > :first-child > span > div{
+        font-size: 8px;
+        }
+        header > :first-child > span > div > :first-child{
+        font-size: 40px;
+        margin: 0 10px;
+        }
+        header > :last-child span{
+            font-size: 7px;
+        }
+    } 
 `
